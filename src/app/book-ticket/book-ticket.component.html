@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h2 class="text-center">{{ movie.movieName }}</h2>
+        <h5>Booked Seats: {{ movie.bookedSeats }}</h5>
+      </div>
+    </div>
+  
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <form>
+          <div class="form-group">
+            <label for="seatsSelect">Number of Seats:</label>
+            <select class="form-control" id="seatsSelect" [(ngModel)]="numberOfSeats" name="seats">
+              <option *ngFor="let seat of seatsArray">{{ seat }}</option>
+            </select>
+          </div>
+          <button type="button" class="btn btn-primary" (click)="bookSeats()">Book Seats</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  

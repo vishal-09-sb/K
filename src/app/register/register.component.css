@@ -1,0 +1,92 @@
+body {
+  background-color: #f0f0f0;
+}
+
+.container {
+  background-color: #fff;
+  max-width: 400px;
+  padding: 20px;
+  margin: 0 auto;
+  margin-top: 50px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #555;
+}
+
+label {
+  font-weight: bold;
+  color: #555;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+}
+
+.registerbtn {
+  background-color: #2196F3;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.registerbtn:hover {
+  background-color: #0b7dda;
+}
+
+.invalid-password {
+  border: 1px solid red;
+}
+
+
+.container.signin {
+  text-align: center;
+  margin-top: 16px;
+}
+
+.container.signin p {
+  margin: 0;
+}
+
+.container.signin a {
+  color: #2196F3;
+}
+
+.container.signin a:hover {
+  text-decoration: underline;
+}
+
+hr {
+  border: 1px solid #f0f0f0;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+p {
+  color: #555;
+}
+
+a {
+  color: #2196F3;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}

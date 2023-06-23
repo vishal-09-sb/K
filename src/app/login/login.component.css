@@ -1,0 +1,93 @@
+/* login.css */
+
+.container {
+  background-color: #fff;
+  max-width: 400px;
+  padding: 20px;
+  margin: 0 auto;
+  margin-top: 50px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #555;
+}
+
+label {
+  font-weight: bold;
+  color: #555;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  font-size: 14px;
+}
+
+.loginbtn {
+  background-color: #2196F3;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.loginbtn:hover {
+  background-color: #0b7dda;
+}
+
+.signUp {
+  text-align: center;
+  margin-top: 16px;
+  font-size: 14px;
+  color: #777;
+}
+
+.signUp p {
+  margin: 0;
+}
+
+.signUp a {
+  color: #2196F3;
+  text-decoration: none;
+}
+
+.signUp a:hover {
+  text-decoration: underline;
+}
+
+hr {
+  border: 1px solid #f0f0f0;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+p {
+  color: #555;
+}
+
+a {
+  color: #2196F3;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+body {
+  background-color: #f0f0f0;
+}

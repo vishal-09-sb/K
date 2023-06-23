@@ -1,0 +1,74 @@
+<!-- <div class="container">
+    <div class="row">
+        <div class="col-md-4" *ngFor="let movie of movies">
+            <div class="card mt-3">
+                <div class="card-body">
+                    <h5 class="card-title">{{ movie.movieName }}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{ movie.theatreName }}</h6>
+                    <p class="card-text">Seats Available: {{ movie.seatsAvailable }}</p>
+                    <p class="card-text">Booked Seats: {{ movie.bookedSeats }}</p>
+                    <button class="btn btn-danger" (click)="deleteMovie(movie.movieName, movie.theatreName)">Delete</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    for themng 
+</div> -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <input type="text" [(ngModel)]="searchText" class="form-control" placeholder="Search">
+            <button class="btn btn-primary ml-2" (click)="navigateToAddMovie()">Add Movie</button>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4" *ngFor="let movie of movies | filter:searchText">
+            <div class="card mt-3">
+                <div class="card-header p-2">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="mr-2">
+                               
+                            </div>
+                            <div class="ml-2">
+                                <div class="h5 m-0">
+                                    <span *ngIf="!movie.editMode">{{ movie.movieName }}</span>
+                                    <input type="text" *ngIf="movie.editMode" [(ngModel)]="movie.movieName" class="form-control">
+                                </div>
+                                <div class="h7 text-muted">{{ movie.theatreName }}</div>
+                            </div>
+                        </div>
+                        <span class="edit-icon" (click)="toggleEditMode(movie)">
+                            <i class="fas fa-edit"></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="text-muted h7 mb-2"> <i class="fa fa-clock-o"></i>Seats Available: {{ movie.seatsAvailable }}</div>
+                    <div class="text-muted h7 mb-2"> <i class="fa fa-clock-o"></i>Booked Seats: {{ movie.bookedSeats }}</div>
+                    <button class="btn btn-danger card-link" [disabled]="movie.bookedSeats !== 0" (click)="deleteMovie(movie.movieName, movie.theatreName)">
+                        Delete
+                    </button>
+                    <span *ngIf="movie.bookedSeats !== 0" (click)="showDisabledMessage(movie.movieName, movie.theatreName)">
+                        <i class="fa fa-question-circle"></i>
+                    </span>
+                    <button *ngIf="movie.editMode" class="btn btn-primary card-link" (click)="saveMovie(movie)">
+                        <i class="fa fa-check-circle"></i> Save
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,50 @@
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <div class="container">
+      <h1>Register</h1>
+      <p>Please fill in this form to create an account.</p>
+      <hr>
+  
+      <label for="userName"><b>User Name</b></label>
+      <input formControlName="userName" type="text" placeholder="Enter User Name" id="userName" required>
+  
+      <label for="fullName"><b>Full Name</b></label>
+      <input formControlName="fullName" type="text" placeholder="Enter Full Name" id="fullName" required>
+  
+
+
+<label for="email"><b>Email</b></label>
+<input formControlName="email" type="email" placeholder="Enter Email" id="email" required>
+<div *ngIf="registerForm.controls['email'].invalid && (registerForm.controls['email'].dirty || registerForm.controls['email'].touched)"
+  class="error-message">
+  <div *ngIf="registerForm.controls['email'].hasError('email')">Invalid email format</div>
+  <div *ngIf="registerForm.controls['email'].hasError('required')">Email is required</div>
+</div>
+
+<label for="userPassword"><b>Password</b></label>
+<input formControlName="userPassword" type="password" placeholder="Enter Password" id="userPassword"
+  [ngClass]="{'invalid-password': registerForm.controls['userPassword'].value && registerForm.controls['userPassword'].value.length < 8 }"
+  required>
+<div *ngIf="registerForm.controls['userPassword'].errors?.['minlength']" class="error-message">
+  Password must be at least 8 characters long.
+</div>
+
+
+      <label for="secretQuestion"><b>Secret Question</b></label>
+      <select formControlName="secretQuestion" id="secretQuestion" required>
+          <option value="Who are you?">Who are you?</option>
+          <option value="What is your favrouite color?">What is your favrouite color?</option>
+          <option value="What is your mother's name?">What is your mother's name?</option>
+          <option value="What is the name of your first friend?">What is the name of your first friend?</option>
+          <option value="What is the name of your pet?">What is the name of your pet?</option>
+      </select>
+  
+      <label for="secretAnswer"><b>Secret Answer</b></label>
+      <input formControlName="secretAnswer" type="text" placeholder="Enter Secret Answer" id="secretAnswer" required>
+  
+      <button type="submit" class="registerbtn" [disabled]="!registerForm.valid">Register</button>
+    </div>
+  
+    <div class="container signIn">
+      <p>Already have an account? <a routerLink="/login">Sign in</a>.</p>
+    </div>
+  </form>
